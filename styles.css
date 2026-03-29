@@ -1,0 +1,391 @@
+/* public/css/reset.css */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    font-size: 1.6rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* public/css/style.css */
+  :root {
+    --color-turf: #2e8b57; /* 芝コースをイメージした緑色 */
+    --color-turf-light: #a7d7b8;
+    --color-dirt: #b8860b; /* ダートコースをイメージした茶色 */
+    --color-dirt-light: #e6c78c;
+    --color-white: #ffffff;
+    --color-black: #1a1a1a;
+    --color-gray: #f5f5f5;
+    --color-text: #333333;
+    --font-main: 'Noto Sans JP', sans-serif;
+    --font-accent: 'Playfair Display', serif;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* ヘッダー */
+  .header {
+    background-color: var(--color-turf);
+    padding: 2rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .site-title {
+    color: var(--color-white);
+    font-family: var(--font-accent);
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  
+  .navigation ul {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navigation a {
+    color: var(--color-white);
+    font-size: 1.6rem;
+    font-weight: 700;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-white);
+    transition: width 0.3s ease;
+  }
+  
+  .navigation a:hover::after {
+    width: 100%;
+  }
+  
+  /* ヒーローセクション */
+  .hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
+  }
+  
+  .hero-content {
+    color: var(--color-white);
+    text-align: center;
+  }
+  
+  .hero-content h2 {
+    font-size: 5rem;
+    font-family: var(--font-accent);
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 2rem;
+  }
+  
+  /* セクション共通 */
+  section {
+    padding: 8rem 0;
+  }
+  
+  .section-title {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    font-family: var(--font-accent);
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-turf), var(--color-dirt));
+    margin: 1.5rem auto 0;
+  }
+  
+  /* 自己紹介セクション */
+  .about {
+    background-color: var(--color-gray);
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text p {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .about-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* 推し馬紹介セクション */
+  .horses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+  
+  .horse-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .horse-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .horse-img {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .horse-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .horse-img.turf::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, var(--color-turf-light));
+  }
+  
+  .horse-img.dirt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, var(--color-dirt-light));
+  }
+  
+  .horse-card h3 {
+    padding: 2rem 2rem 1rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+  
+  .horse-card p {
+    padding: 0 2rem 2rem;
+    font-size: 1.6rem;
+  }
+  
+  .netkeiba-link {
+    display: inline-block;
+    margin: 0 2rem 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--color-dirt);
+    color: var(--color-white);
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  
+  .netkeiba-link:hover {
+    background-color: var(--color-turf);
+  }
+  
+  /* ギャラリーセクション */
+  .gallery {
+    background-color: var(--color-white);
+  }
+  
+  .gallery-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  /* コンタクトセクション */
+  .contact {
+    background: linear-gradient(to right, var(--color-turf-light), var(--color-dirt-light));
+    color: var(--color-text);
+  }
+  
+  .contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+  }
+  
+  .email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+  }
+  
+  .email a {
+    color: var(--color-turf);
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  
+  .email a:hover {
+    color: var(--color-dirt);
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    color: var(--color-text);
+    font-size: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .social-link:hover {
+    background-color: var(--color-turf);
+    color: var(--color-white);
+  }
+  
+  /* フッター */
+  .footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  
+  /* レスポンシブ対応 */
+  @media screen and (max-width: 960px) {
+    .about-content {
+      flex-direction: column;
+    }
+    
+    .hero-content h2 {
+      font-size: 4rem;
+    }
+    
+    .navigation {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 50%;
+    }
+    
+    .horses-grid,
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .hero-content h2 {
+      font-size: 3rem;
+    }
+  }
