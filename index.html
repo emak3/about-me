@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      try {
+        var _t = localStorage.getItem("emak-profile-theme");
+        if (_t === "light" || (!_t && window.matchMedia("(prefers-color-scheme: light)").matches))
+          document.documentElement.classList.add("theme-day");
+      } catch (e) {}
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="emak。ナビは嘘。横は逆。A/B はたぶんテーマ。"
+    />
+    <meta name="theme-color" content="#070708" />
+    <title>emak — メヲ閉じて</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/theme-b-collapse.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">SKIP</a>
+
+    <p class="epigraph epigraph--a" aria-hidden="true">fig.1 視線は直線ではない</p>
+    <p class="epigraph epigraph--b" aria-hidden="true">margin の外側に真実がある説</p>
+
+    <div class="glitch-blocks" aria-hidden="true">
+      <div class="glitch-blocks__bar glitch-blocks__bar--1"></div>
+      <div class="glitch-blocks__bar glitch-blocks__bar--2"></div>
+      <div class="glitch-blocks__bar glitch-blocks__bar--3"></div>
+    </div>
+    <div class="halftone" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="chromatic-edge" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <p class="side-crawl" aria-hidden="true">THIS_IS_NOT_A_MARGIN · DO_NOT_TRUST_THE_FLOOR ·</p>
+
+    <header class="masthead">
+      <span class="masthead__stamp" aria-hidden="true">∅</span>
+      <div class="masthead__meta">
+        <span class="masthead__coord" id="fake-coord">多摩川の向こうへ</span>
+        <button
+          type="button"
+          class="invert-chip"
+          id="theme-toggle"
+          aria-label="表示のコントラストを切り替え（ラベルは A / B のみ）"
+          aria-pressed="false"
+        >
+          <span class="invert-chip__label">A</span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="void-nav" aria-label="偽ナビ">
+      <a href="#contact">倉庫</a>
+      <a href="#work">連絡</a>
+      <a href="#main">終端</a>
+      <a href="https://github.com/emak3" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+
+    <main id="main">
+      <section class="opener" aria-labelledby="opener-label">
+        <h1 id="opener-label" class="visually-hidden">emak</h1>
+        <div class="opener__glyph" aria-hidden="true">░░</div>
+        <div class="opener__scatter" data-reveal>
+          <span class="opener__letter opener__letter--e">E</span>
+          <span class="opener__letter opener__letter--m">M</span>
+          <span class="opener__letter opener__letter--a">A</span>
+          <span class="opener__letter opener__letter--k">K</span>
+        </div>
+        <p class="opener__sub opener__sub--rift" data-reveal>
+          このページは自己紹介のふりをしたファイル一覧の幽霊。<span class="opener__num">∞</span> は飾り。本質は GitHub の URL の束ね方。
+        </p>
+        <p class="opener__echo" aria-hidden="true">GHOST_INDEX · GHOST_INDEX ·</p>
+        <div class="decoy-row" aria-hidden="true">
+          <button type="button" class="decoy" tabindex="-1">export</button>
+          <button type="button" class="decoy" tabindex="-1">rebuild</button>
+          <button type="button" class="decoy" tabindex="-1">panic</button>
+        </div>
+      </section>
+
+      <section class="marquee-band" aria-hidden="true">
+        <div class="marquee" id="marquee-track"></div>
+      </section>
+      <section class="marquee-band marquee-band--rev" aria-hidden="true">
+        <div class="marquee" id="marquee-track-rev"></div>
+      </section>
+
+      <section class="manifesto manifesto--collage" aria-labelledby="manifesto-label">
+        <h2 id="manifesto-label" class="manifesto__label manifesto__label--detached" data-reveal>§ 付録 / ノイズ</h2>
+        <div class="manifesto__collage">
+          <div class="manifesto__column manifesto__column--vertical manifesto__spine" data-reveal>
+            <p class="manifesto__vertical">Ctrl</p>
+            <p class="manifesto__vertical">Z</p>
+            <p class="manifesto__vertical">の夢</p>
+          </div>
+          <div class="manifesto__prose manifesto__prose--torn" data-reveal>
+            <p class="manifesto__frag manifesto__frag--1">
+              公式がやらない横取り。リンクをいじるのも同じ族譜。プラグインは起動と停止の合図で用途説明は後付け、先に挙動がある。
+            </p>
+            <p class="manifesto__frag manifesto__frag--2">
+              重いけど誠実に落ちる。軽いけど余白の戦争になる。どちらもログを読めばだいたい友達る。
+            </p>
+            <p class="manifesto__aside manifesto__frag manifesto__frag--3">
+              <span id="typing-target" class="manifesto__typing"></span><span class="manifesto__caret" aria-hidden="true"></span>
+            </p>
+          </div>
+          <aside class="manifesto__aside-block manifesto__aside-block--parasite" data-reveal>
+            <p class="manifesto__fine">地: 神奈川。時: 睡眠とコミットが競合している。</p>
+            <p class="manifesto__fine">
+              <a href="https://ouma3.org" target="_blank" rel="noopener noreferrer">ouma3.org</a>
+              は別ルート。この URL はただの入口のひとつ。
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="work" class="work work--stage" aria-labelledby="work-label">
+        <div class="work__header work__header--split" data-reveal>
+          <h2 id="work-label" class="work__title">
+            <span class="work__title-chunk work__title-chunk--a">Obj</span>
+            <span class="work__title-chunk work__title-chunk--b">ects</span>
+            <span class="work__title-chunk work__title-chunk--c">実</span>
+          </h2>
+          <p class="work__note work__note--sideways">横スクロールの向きと中身の向きは一致しません。意図的です。</p>
+        </div>
+        <div class="work__rail-wrap">
+          <div class="work__rail" id="project-grid"></div>
+        </div>
+      </section>
+
+      <section class="colophon colophon--rupture" id="contact" aria-labelledby="colophon-label">
+        <h2 id="colophon-label" class="visually-hidden">末尾</h2>
+        <div class="colophon__block" data-reveal>
+          <p class="colophon__line colophon__line--split">
+            <span class="colophon__shard">連絡は msg@ouma3.org 経由が</span>
+            <span class="colophon__shard colophon__shard--late">通りやすい。それもそれ以外も確率の問題。</span>
+          </p>
+          <div class="colophon__links colophon__links--stagger">
+            <a class="colophon__href" href="https://github.com/emak3" target="_blank" rel="noopener noreferrer">github.com/emak3</a>
+            <span class="colophon__sep">¦</span>
+            <a class="colophon__href" href="https://ouma3.org" target="_blank" rel="noopener noreferrer">ouma3.org</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot-stamp foot-stamp--drift">
+      <p><span id="year"></span> <span id="konami-hint" hidden>KONAMI</span></p>
+    </footer>
+
+    <div id="glitch-overlay" class="glitch-overlay" hidden aria-hidden="true"></div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+html {
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --font-sans: "IBM Plex Sans JP", "Hiragino Sans", sans-serif;
+
+  --void: #070708;
+  --slab: #12141a;
+  --ash: #8a8680;
+  --bone: #d6d2c8;
+  --toxic: #c45c2a;
+  --crt: #5c7c3a;
+  --error: #8b2942;
+
+  --scroll-tilt: 0deg;
+  --scroll-hue: 0;
+  --look-x: 0.5;
+  --look-y: 0.5;
+  --skew-amt: 5deg;
+
+  color-scheme: dark;
+  --bg: var(--void);
+  --fg: var(--bone);
+  --muted: color-mix(in srgb, var(--ash) 85%, var(--void));
+  --accent: var(--toxic);
+  --strike: #1e222c;
+  --glow: var(--crt);
+  --card-edge: var(--error);
+}
+
+html.theme-day {
+  color-scheme: light;
+  --bg: #e4e2dc;
+  --fg: #0c0c0e;
+  --muted: #4a4844;
+  --accent: #9a3410;
+  --strike: #c9c5bc;
+  --glow: #3f6212;
+  --card-edge: #7f1d1d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    --scroll-tilt: 0deg;
+    --scroll-hue: 0;
+    --skew-amt: 0deg;
+  }
+}
